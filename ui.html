@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Figma Design(Beta)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            width: 300px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Image to Figma Design</h2>
+    <input type="file" id="imageInput" accept="image/png" />
+    <button id="create">Create Design</button>
+    <button id="change">Change Image</button>
+    <div id="output"></div>
+    <script>
+        document.getElementById('create').onclick = () => {
+            const imageInput = document.getElementById('imageInput');
+            const outputDiv = document.getElementById('output');
+
+            if (imageInput.files.length === 0) {
+                outputDiv.innerHTML = "<p>Please select a PNG image file.</p>";
+                return;
+            }
+
+            const file = imageInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const imgElement = document.createElement('img');
+                imgElement.src = event.target.result;
+                outputDiv.innerHTML = ''; // Clear previous output
+                outputDiv.appendChild(imgElement);
+
+                // Log the base64 data
+                console.log("Base64 Image Data:", event.target.result);
+
+                // Send the image data to Figma
+                parent.postMessage({ pluginMessage: { type: 'create-image', base64: event.target.result } }, '*');
+            };
+
+            reader.readAsDataURL(file);
+        };
+
+        document.getElementById('change').onclick = () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+        };
+    </script>
+</body>
+</html>
