@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Design Prompt Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #prompt {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #1C77C3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="prompt">
+        <label for="inputText">Enter your design prompt:</label>
+        <input type="text" id="inputText" placeholder="e.g., 'Homepage of shopping websites'">
+    </div>
+    <button id="generateBtn">Generate Design</button>
+
+    <script>
+        document.getElementById('generateBtn').onclick = () => {
+            const inputValue = document.getElementById('inputText').value;
+            parent.postMessage({ pluginMessage: { type: 'generate', value: inputValue } }, '*');
+        };
+    </script>
+</body>
+</html>
