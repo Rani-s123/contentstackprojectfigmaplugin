@@ -1,11 +1,11 @@
 
 ## Figma Plugin for Seamless Image-to-Design Conversion
 
-This project was created for **Contentstack's TechSurf Hackathon** and includes three unique Figma plugins designed to streamline and elevate your design workflow:
+This project was created for **Contentstack's TechSurf Hackathon** and includes three innovative Figma plugins designed to streamline and enhance your design workflow:
 
 1. **Shape Generator**: Instantly generate customizable shapes within Figma, providing a quick way to add geometric elements to your design.
 2. **Image-to-Figma Converter**: Seamlessly transforms images into editable Figma elements, enabling smooth image-to-design conversion for a cohesive workflow.
-3. **Prompt-to-Figma Design Generator**: Uses the **RAG (Retrieval-Augmentation-Generation)** model to generate designs based on user prompts, combining retrieved information with Figma’s tools for contextually accurate and data-informed designs.
+3. **Prompt-to-Figma Design Generator**: Combines **OpenAI** and the **RAG (Retrieval-Augmentation-Generation)** model to generate designs based on user prompts. This plugin integrates OpenAI’s prompt-handling capabilities with Figma's tools, leveraging real-time data retrieval and augmentation to produce designs that are contextually accurate and dynamically informed.
 
 To begin using these plugins, follow the setup instructions below. For more details on creating Figma plugins, check out the official [Figma Plugin Quickstart Guide](https://www.figma.com/plugin-docs/plugin-quickstart-guide/).
 
@@ -39,9 +39,9 @@ TypeScript extends JavaScript with type annotations, enhancing code reliability 
 
 2. **Image-to-Figma Converter**: Converts images into editable Figma layers, bringing external visuals seamlessly into your Figma project.
 
-3. **Prompt-to-Figma Design Generator**: Powered by the **RAG (Retrieval-Augmentation-Generation)** model:
-   - **Retrieval**: Pulls relevant information from a knowledge base to enrich the design context.
+3. **Prompt-to-Figma Design Generator**: Powered by **OpenAI** and the **RAG (Retrieval-Augmentation-Generation)** model:
+   - **Retrieval**: Uses OpenAI to retrieve relevant data from a knowledge base to enrich the design context.
    - **Augmentation**: Combines retrieved data with Figma’s design capabilities.
-   - **Generation**: Produces a Figma design based on the prompt, making it both contextually accurate and informed by real-time information.
+   - **Generation**: Produces a Figma design based on the prompt, making it both contextually accurate and dynamically informed by real-time information.
 
 For the complete code, visit the [GitHub repository](https://github.com/Rani-s123) and check out my portfolio for more projects: [Portfolio](https://rani-s123.github.io/portofolia/).
